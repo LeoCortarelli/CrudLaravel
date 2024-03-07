@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\JogosController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::fallback(function(){
+    return "Erro ao localizar Rota";
+});
+
+Route::get('/jogos', [JogosController::class, 'index']);

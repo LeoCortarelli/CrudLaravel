@@ -1,0 +1,16 @@
+<!-- Criando um CONTROLLER pelo cmd : e preciso estar dentro da pasta do trabalho -->
+php artisan make:controller JogosController
+
+-------------------------------------------------------------------------------------
+
+<!-- Criando uma migration pelo cmd : e preciso estar dentro da pasta do trabalho -->
+php artisan make:migration create_jogos_table
+
+Ela e encontrada em database > migration
+
+------------------------------------------------------------------------------
+
+<!-- Criando uma MODEL pelo cmd : e preciso estar dentro da pasta do trabalho -->
+php artisan make:model Jogo
+
+Ela se encontra em app > Models
