@@ -13,4 +13,12 @@ class JogosController extends Controller{
         return view('jogos.index',['jogos' => $jogos]);
     }
 
+    public function create(){
+        return view('jogos.create');
+    }
+
+    public function store(Request $request){
+        Jogo::create($request->all()); // Insere no banco todas as informações vindas do request
+        return redirect()->route('jogos-index'); // Redireciona para a listagem
+    }
 }
