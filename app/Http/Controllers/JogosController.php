@@ -26,9 +26,22 @@ class JogosController extends Controller{
         $jogos = Jogo::where('id',$id)->first(); // Where para pegar o mesmo id passado por parametro , e o first para pegar o primeiro
         /* Caso o ID não exista */
         if(!empty($jogos)){ // se não estiver vazia a variavel
-            return view('jogos.edit', ['jogos' => $jogos]);
+            return view('jogos.edit', ['jogos' => $jogos]); // A hora que ele clicar no botão redireciona para o view de edição
         }else{
             return redirect()->route('jogos-index');
         }
+    }
+
+    public function update(Request $request, $id){
+        $data = [
+            'nome' => $request->nome,
+            'categoria' => $request->categoria,
+            'ano_criacao' => $request->ano_criacao,
+            'valor' => $request->valor,
+        ];
+        Jogo::where('id',$id)->update($data);   // (Atualizando)
+        // A tag where que tem que ser procurar pelo mesmo ID que recebeu por parametro 
+
+        return redirect()->route('jogos-index'); // Retornando para a listagem
     }
 }

@@ -8,7 +8,7 @@
     <div class="container mt-5">
       <h1>Edição</h1>
       <hr>
-      <form action="{{ route('jogos-update', ['id' => $jogos->id]) }}" method="post"> <!-- O ACTION E ENVIADO PARA A NOSSA ROTA -->
+      <form action="{{ route('jogos-update', ['id' => $jogos->id]) }}" method="post"> <!-- O ACTION E ENVIADO PARA A NOSSA ROTA E PASSANDO UM PARAMETRO ID -->
         @csrf <!-- Codigo de verificação do proprio laravel para não dar falcificação do site -->
         @method('PUT')
         <div class="form-group">
