@@ -26,6 +26,9 @@ Route::prefix('jogos')->group(function(){  // Criando um grupo de rotas
 
     /* Criando uma rota para a atualização do bando de dados */
     Route::put('/{id}', [JogosController::class, 'update'])->where('id', '[0-9]')->name('jogos-update');
+
+    /* Criando uma rota para deletar do banco de dados */
+    Route::delete('/{id}', [JogosController::class, 'destroy'])->where('id', '[0-9]')->name('jogos-destroy');
 });
 
 

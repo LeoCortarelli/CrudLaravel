@@ -44,4 +44,9 @@ class JogosController extends Controller{
 
         return redirect()->route('jogos-index'); // Retornando para a listagem
     }
+
+    public function destroy($id){
+        Jogo::where('id', $id)->delete();
+        return redirect()->route('jogos-index'); // Retornando para a listagem
+    }
 }
